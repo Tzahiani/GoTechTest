@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-03-23T07:06:30.203Z",
+    "end": "2022-03-23T07:06:37.591Z",
+    "duration": 7388,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dc9f6b96-e9e7-4592-b04f-c57c5721f6dc",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ba6a2b9-4699-4f4d-a3f4-671cd1a181a3",
+          "title": "UI tests",
+          "fullFile": "C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts",
+          "file": "C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts",
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook: Start browser in \"UI tests\"",
+              "fullTitle": "UI tests \"before each\" hook: Start browser in \"UI tests\"",
+              "timedOut": false,
+              "duration": 4369,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4 /*yield*/, restaurantsAPI_1.default.resetServer()];\n                case 1:\n                    _a.sent();\n                    browser = new browser_1.Browser();\n                    return [4 /*yield*/, browser.navigateToUrl(baseUiUrl)];\n                case 2:\n                    _a.sent();\n                    return [2 /*return*/];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "7ba763f9-fca2-42b7-8c80-a8bdb9080b0f",
+              "parentUUID": "8ba6a2b9-4699-4f4d-a3f4-671cd1a181a3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook: Close browser in \"UI tests\"",
+              "fullTitle": "UI tests \"after each\" hook: Close browser in \"UI tests\"",
+              "timedOut": false,
+              "duration": 1714,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4 /*yield*/, browser.close()];\n                case 1:\n                    _a.sent();\n                    return [2 /*return*/];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "579d3872-2645-480e-be58-84b91bfc1737",
+              "parentUUID": "8ba6a2b9-4699-4f4d-a3f4-671cd1a181a3",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Compare btween api to ui",
+              "fullTitle": "UI tests Compare btween api to ui",
+              "timedOut": false,
+              "duration": 406,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var _a;\nreturn __awaiter(this, void 0, void 0, function () {\n    var restaurants, actualAmount, numOfRowsInTable;\n    return __generator(this, function (_b) {\n        switch (_b.label) {\n            case 0: return [4 /*yield*/, restaurantsAPI_1.default.getRestaurants()];\n            case 1:\n                restaurants = _b.sent();\n                //Assert\n                (0, chai_1.expect)(restaurants.success).to.be.true;\n                actualAmount = (_a = restaurants.data) === null || _a === void 0 ? void 0 : _a.length;\n                //TO-DO\n                //here i need to get the num of rows in thr rest table but i dont konow how to do it\n                // after i do it i will compare btween actualAmount of the api and the num of row\n                this.browser.findElements(selenium_webdriver_1.By.xpath(\"//*[@id='main-table']/table/tbody/tr\")).then(function (tableRows) {\n                    console.log(\"no of tableRows :\", tableRows.size());\n                });\n                numOfRowsInTable = 3;\n                (0, chai_1.expect)(actualAmount).to.equal(numOfRowsInTable, 'Restaurants amount is not as expected');\n                return [2 /*return*/];\n        }\n    });\n});",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'findElements')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'findElements')\n    at Context.<anonymous> (C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts:71:22)\n    at step (C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts:33:23)\n    at Object.next (C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts:14:53)\n    at fulfilled (C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant-ui.spec.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": null
+              },
+              "uuid": "076c93df-8b44-4108-bbd1-4c691ec321cb",
+              "parentUUID": "8ba6a2b9-4699-4f4d-a3f4-671cd1a181a3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "076c93df-8b44-4108-bbd1-4c691ec321cb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 406,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        },
+        {
+          "uuid": "ee40519f-fb45-4bf5-9d72-08699796f531",
+          "title": "Restaurants tests",
+          "fullFile": "C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant.spec.ts",
+          "file": "C:\\Users\\tanid\\Desktop\\TzahiProject\\GoTech Test\\candidate-test\\src\\tests\\restaurant.spec.ts",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Reset restaurant server in \"Restaurants tests\"",
+              "fullTitle": "Restaurants tests \"before all\" hook: Reset restaurant server in \"Restaurants tests\"",
+              "timedOut": false,
+              "duration": 430,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: \n                //Arrange\n                return [4 /*yield*/, restaurantsAPI_1.default.resetServer()];\n                case 1:\n                    //Arrange\n                    _a.sent();\n                    return [2 /*return*/];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "17cfe382-bca8-4e0b-b4dc-c6575c034a24",
+              "parentUUID": "ee40519f-fb45-4bf5-9d72-08699796f531",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Check score in a number",
+              "fullTitle": "Restaurants tests Check score in a number",
+              "timedOut": false,
+              "duration": 438,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "return __awaiter(void 0, void 0, void 0, function () {\n        var getByIdResponse, result;\n        return __generator(this, function (_a) {\n            switch (_a.label) {\n                case 0: return [4 /*yield*/, restaurantsAPI_1.default.getRestaurantById(59)];\n                case 1:\n                    getByIdResponse = _a.sent();\n                    result = JSON.parse(JSON.stringify(getByIdResponse));\n                    //Assert\n                    (0, chai_1.expect)(getByIdResponse.status).to.equal(200);\n                    (0, chai_1.expect)(getByIdResponse.success).to.be.true;\n                    (0, chai_1.expect)(result.data.score).to.be.a('number');\n                    return [2 /*return*/];\n            }\n        });\n    });",
+              "err": {},
+              "uuid": "4a04d9c3-0b7b-4b40-95e6-a161b2cda62a",
+              "parentUUID": "ee40519f-fb45-4bf5-9d72-08699796f531",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4a04d9c3-0b7b-4b40-95e6-a161b2cda62a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 438,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 20000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 20000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.1.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}
